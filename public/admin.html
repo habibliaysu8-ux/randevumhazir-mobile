@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>randevumhazır · admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="panel-body">
+  <div class="app-shell">
+    <header class="panel-topbar container">
+      <a href="/" class="brand-text">randevumhazır</a>
+      <nav class="hero-nav">
+        <a href="/" class="nav-link">Müşteri paneli</a>
+        <a href="/partner" class="nav-link">Partner paneli</a>
+        <button id="adminLogoutBtn" class="nav-pill plain-btn">Çıkış</button>
+      </nav>
+    </header>
+
+    <main class="container stack-24 panel-main">
+      <section class="dashboard-banner">
+        <div>
+          <div class="eyebrow">Admin paneli</div>
+          <h1>Sistem genelini tek ekranda izle.</h1>
+          <p id="adminSummaryText">Giriş yaptıktan sonra tüm kullanıcılar, salonlar ve rezervasyonlar görünür.</p>
+        </div>
+        
+      </section>
+
+      <section class="partner-layout admin-layout">
+        <aside class="stack-16">
+          <div class="sheet-card">
+            <h3>Admin girişi</h3>
+            <div class="form-stack">
+              <div class="field"><label>E-posta</label><input id="adminEmail" type="email" placeholder="admin e-postası" /></div>
+              <div class="field"><label>Şifre</label><input id="adminPassword" type="password" placeholder="••••••••" /></div>
+              <button id="adminLoginBtn" class="button dark full">Admin girişi</button>
+            </div>
+          </div>
+        </aside>
+
+        <section class="stack-16">
+          <div id="adminMetrics" class="metrics-grid">
+            <div class="metric-card"><span class="muted">Toplam kullanıcı</span><strong>0</strong></div>
+            <div class="metric-card"><span class="muted">Partner</span><strong>0</strong></div>
+            <div class="metric-card"><span class="muted">Salon</span><strong>0</strong></div>
+            <div class="metric-card"><span class="muted">Rezervasyon</span><strong>0</strong></div>
+          </div>
+
+          <div class="sheet-card">
+            <div class="section-header"><h2>Salonlar</h2></div>
+            <div id="adminSalonsTable" class="table-wrap"></div>
+          </div>
+
+          <div class="sheet-card">
+            <div class="section-header"><h2>Kullanıcılar</h2></div>
+            <div id="adminUsersTable" class="table-wrap"></div>
+          </div>
+
+          <div class="sheet-card">
+            <div class="section-header"><h2>Rezervasyonlar</h2></div>
+            <div id="adminBookingsTable" class="table-wrap"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/shared.js"></script>
+  <script src="/admin.js"></script>
+</body>
+</html>

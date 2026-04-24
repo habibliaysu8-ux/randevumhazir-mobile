@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#e8e2ff" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Randevumhazır App</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css?v=gercek5-20260424" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="topbar">
+        <div class="brand-text">randevumhazır</div>
+        <button class="round-btn" id="authBtn" type="button">Giriş yap</button>
+      </div>
+      <div class="hero-copy">
+        <span class="pill-note">Bakımını sakin bir akışla planla</span>
+        <h1>Kendine ayırdığın zamanı zarifçe planla</h1>
+        <p>İstanbul, Ankara ve İzmir’deki salonları keşfet. Hizmeti, ilçeyi, tarihi ve saati seç.</p>
+      </div>
+      <div class="search-card">
+        <div class="search-line service-search-wrap">
+          <span>⌕</span>
+          <div>
+            <label>Hizmet</label>
+            <input id="searchInput" name="search_empty_web_same" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Hizmet ara veya yaz" />
+            <div id="serviceDropdown" class="service-dropdown hidden"></div>
+          </div>
+        </div>
+        <div class="filter-row two">
+          <div class="select-wrap"><label>Şehir</label><select id="citySelect" autocomplete="off"><option value="34">İstanbul</option><option value="6">Ankara</option><option value="35">İzmir</option></select></div>
+          <div class="select-wrap"><label>İlçe</label><select id="districtSelect" autocomplete="off"><option value="">Tüm ilçeler</option></select></div>
+        </div>
+        <div class="filter-row two">
+          <div class="select-wrap date-select-wrap" id="daySelectWrap"><label>Gün</label><button id="daySelectButton" class="date-trigger" type="button" aria-label="Gün seç" autocomplete="off">Gün seç</button><input id="daySelect" type="hidden" autocomplete="off" data-iso="" value="" /></div>
+          <div class="select-wrap"><label>Saat</label><select id="timeSelect" autocomplete="off"><option value="">Saat seç</option></select></div>
+        </div>
+        <button id="searchBtn" class="primary-btn" type="button">Ara</button>
+      </div>
+    </header>
+    <main>
+      <section class="panel" id="homeView">
+        <div class="section-title">
+          <div><span>Hızlı filtreler</span><h2>Belirli saat için uygun salonlar</h2></div>
+          <span id="resultCount">0 sonuç</span>
+        </div>
+        <div id="storeList" class="store-list"></div>
+      </section>
+      <section class="panel hidden" id="detailView">
+        <button class="ghost-btn" id="backHome" type="button">← Geri</button>
+        <div id="storeDetail"></div>
+      </section>
+      <section class="panel hidden" id="accountView">
+        <div class="section-title">
+          <div><span>Müşteri hesabı</span><h2>Hesabım</h2></div>
+          <button class="ghost-btn hidden" id="logoutBtn" type="button">Çıkış</button>
+        </div>
+        <div id="profileBox" class="profile-box"></div>
+        <h3>Randevularım</h3>
+        <div id="bookingList" class="booking-list"></div>
+      </section>
+    </main>
+    <nav class="bottom-nav">
+      <button data-tab="home" class="active"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1v-9.5Z"/></svg><span>Ana sayfa</span></button>
+      <button data-tab="bookings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 9h16M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M8 13h3M8 17h6"/></svg><span>Randevular</span></button>
+      <button data-tab="account"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg><span>Hesap</span></button>
+    </nav>
+  </div>
+  <dialog id="authModal" class="auth-modal">
+    <form method="dialog" class="auth-box" id="authForm" autocomplete="off" data-lpignore="true">
+      <button class="close-btn" value="cancel" type="button" id="closeAuth">×</button>
+      <h2 id="authTitle">Giriş yap</h2>
+      <p class="muted">Randevu alabilmek için müşteri hesabıyla giriş yap.</p>
+      <input id="nameField" class="hidden" name="name_blank_9382" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Ad soyad" value="" />
+      <input id="emailField" type="email" name="email_blank_9382" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="E-posta" value="" />
+      <input id="phoneField" class="hidden" name="phone_blank_9382" autocomplete="off" inputmode="tel" autocorrect="off" spellcheck="false" placeholder="Telefon" value="" />
+      <input id="passwordField" type="password" name="pass_blank_9382" autocomplete="new-password" placeholder="Şifre" value="" />
+      <button class="primary-btn" id="submitAuth" type="submit">Giriş yap</button>
+      <button class="link-btn forgot-link" id="forgotBtn" type="button">Şifremi unuttum</button>
+      <p class="auth-panel-note" id="authSwitchNote"><span id="authSwitchText">Hesabın yok mu?</span> <button class="auth-link-btn" id="toggleAuth" type="button">Kayıt ol</button></p>
+      <p class="error" id="authError"></p>
+    </form>
+  </dialog>
+  <div id="calendarOverlay" class="calendar-overlay hidden" aria-hidden="true">
+    <div class="calendar-card" role="dialog" aria-modal="true" aria-labelledby="calendarTitle">
+      <div class="calendar-head">
+        <div>
+          <strong id="calendarTitle">Gün seç</strong>
+          <span>Randevu için uygun günü seç</span>
+        </div>
+        <button id="calendarClose" type="button" aria-label="Kapat">×</button>
+      </div>
+      <div class="calendar-monthbar">
+        <button id="calendarPrev" type="button" aria-label="Önceki ay">‹</button>
+        <strong id="calendarMonthLabel">Nisan 2026</strong>
+        <button id="calendarNext" type="button" aria-label="Sonraki ay">›</button>
+      </div>
+      <div class="calendar-weekdays" aria-hidden="true">
+        <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span>
+      </div>
+      <div id="calendarDays" class="calendar-days"></div>
+      <button id="calendarClear" class="calendar-clear" type="button">Temizle</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js?v=gercek5-20260424"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+RANDEVUMHAZIR MOBILE - TAM DUZELTME
+
+GitHub'a yukle:
+cd ~/Desktop/RANDEVUMHAZIR-MOBILE-TAM-DUZELTME
+git init
+git add .
+git commit -m "mobile tam duzeltme"
+git branch -M main
+git remote add origin https://github.com/habibliaysu8-ux/randevumhazir-mobile.git
+git push -f origin main
+
+Render:
+randevumhazir-mobile > Manual Deploy > Deploy latest commit
+
+Canli ac:
+https://randevumhazir-mobile.onrender.com/app/?v=tamduzeltme3

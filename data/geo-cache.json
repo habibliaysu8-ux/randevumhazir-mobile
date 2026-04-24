@@ -1,0 +1,495 @@
+{
+  "provinces": [
+    {
+      "id": 34,
+      "name": "İstanbul"
+    },
+    {
+      "id": 6,
+      "name": "Ankara"
+    },
+    {
+      "id": 35,
+      "name": "İzmir"
+    }
+  ],
+  "districtsByProvinceId": {
+    "34": [
+      {
+        "id": 3401,
+        "name": "Adalar",
+        "provinceId": 34
+      },
+      {
+        "id": 3402,
+        "name": "Arnavutköy",
+        "provinceId": 34
+      },
+      {
+        "id": 3403,
+        "name": "Ataşehir",
+        "provinceId": 34
+      },
+      {
+        "id": 3404,
+        "name": "Avcılar",
+        "provinceId": 34
+      },
+      {
+        "id": 3405,
+        "name": "Bağcılar",
+        "provinceId": 34
+      },
+      {
+        "id": 3406,
+        "name": "Bahçelievler",
+        "provinceId": 34
+      },
+      {
+        "id": 3407,
+        "name": "Bakırköy",
+        "provinceId": 34
+      },
+      {
+        "id": 3408,
+        "name": "Başakşehir",
+        "provinceId": 34
+      },
+      {
+        "id": 3409,
+        "name": "Bayrampaşa",
+        "provinceId": 34
+      },
+      {
+        "id": 3410,
+        "name": "Beşiktaş",
+        "provinceId": 34
+      },
+      {
+        "id": 3411,
+        "name": "Beykoz",
+        "provinceId": 34
+      },
+      {
+        "id": 3412,
+        "name": "Beylikdüzü",
+        "provinceId": 34
+      },
+      {
+        "id": 3413,
+        "name": "Beyoğlu",
+        "provinceId": 34
+      },
+      {
+        "id": 3414,
+        "name": "Büyükçekmece",
+        "provinceId": 34
+      },
+      {
+        "id": 3415,
+        "name": "Çatalca",
+        "provinceId": 34
+      },
+      {
+        "id": 3416,
+        "name": "Çekmeköy",
+        "provinceId": 34
+      },
+      {
+        "id": 3417,
+        "name": "Esenler",
+        "provinceId": 34
+      },
+      {
+        "id": 3418,
+        "name": "Esenyurt",
+        "provinceId": 34
+      },
+      {
+        "id": 3419,
+        "name": "Eyüpsultan",
+        "provinceId": 34
+      },
+      {
+        "id": 3420,
+        "name": "Fatih",
+        "provinceId": 34
+      },
+      {
+        "id": 3421,
+        "name": "Gaziosmanpaşa",
+        "provinceId": 34
+      },
+      {
+        "id": 3422,
+        "name": "Güngören",
+        "provinceId": 34
+      },
+      {
+        "id": 3423,
+        "name": "Kadıköy",
+        "provinceId": 34
+      },
+      {
+        "id": 3424,
+        "name": "Kağıthane",
+        "provinceId": 34
+      },
+      {
+        "id": 3425,
+        "name": "Kartal",
+        "provinceId": 34
+      },
+      {
+        "id": 3426,
+        "name": "Küçükçekmece",
+        "provinceId": 34
+      },
+      {
+        "id": 3427,
+        "name": "Maltepe",
+        "provinceId": 34
+      },
+      {
+        "id": 3428,
+        "name": "Pendik",
+        "provinceId": 34
+      },
+      {
+        "id": 3429,
+        "name": "Sancaktepe",
+        "provinceId": 34
+      },
+      {
+        "id": 3430,
+        "name": "Sarıyer",
+        "provinceId": 34
+      },
+      {
+        "id": 3431,
+        "name": "Silivri",
+        "provinceId": 34
+      },
+      {
+        "id": 3432,
+        "name": "Sultanbeyli",
+        "provinceId": 34
+      },
+      {
+        "id": 3433,
+        "name": "Sultangazi",
+        "provinceId": 34
+      },
+      {
+        "id": 3434,
+        "name": "Şile",
+        "provinceId": 34
+      },
+      {
+        "id": 3435,
+        "name": "Şişli",
+        "provinceId": 34
+      },
+      {
+        "id": 3436,
+        "name": "Tuzla",
+        "provinceId": 34
+      },
+      {
+        "id": 3437,
+        "name": "Ümraniye",
+        "provinceId": 34
+      },
+      {
+        "id": 3438,
+        "name": "Üsküdar",
+        "provinceId": 34
+      },
+      {
+        "id": 3439,
+        "name": "Zeytinburnu",
+        "provinceId": 34
+      }
+    ],
+    "6": [
+      {
+        "id": 601,
+        "name": "Akyurt",
+        "provinceId": 6
+      },
+      {
+        "id": 602,
+        "name": "Altındağ",
+        "provinceId": 6
+      },
+      {
+        "id": 603,
+        "name": "Ayaş",
+        "provinceId": 6
+      },
+      {
+        "id": 604,
+        "name": "Bala",
+        "provinceId": 6
+      },
+      {
+        "id": 605,
+        "name": "Beypazarı",
+        "provinceId": 6
+      },
+      {
+        "id": 606,
+        "name": "Çamlıdere",
+        "provinceId": 6
+      },
+      {
+        "id": 607,
+        "name": "Çankaya",
+        "provinceId": 6
+      },
+      {
+        "id": 608,
+        "name": "Çubuk",
+        "provinceId": 6
+      },
+      {
+        "id": 609,
+        "name": "Elmadağ",
+        "provinceId": 6
+      },
+      {
+        "id": 610,
+        "name": "Etimesgut",
+        "provinceId": 6
+      },
+      {
+        "id": 611,
+        "name": "Evren",
+        "provinceId": 6
+      },
+      {
+        "id": 612,
+        "name": "Gölbaşı",
+        "provinceId": 6
+      },
+      {
+        "id": 613,
+        "name": "Güdül",
+        "provinceId": 6
+      },
+      {
+        "id": 614,
+        "name": "Haymana",
+        "provinceId": 6
+      },
+      {
+        "id": 615,
+        "name": "Kahramankazan",
+        "provinceId": 6
+      },
+      {
+        "id": 616,
+        "name": "Kalecik",
+        "provinceId": 6
+      },
+      {
+        "id": 617,
+        "name": "Keçiören",
+        "provinceId": 6
+      },
+      {
+        "id": 618,
+        "name": "Kızılcahamam",
+        "provinceId": 6
+      },
+      {
+        "id": 619,
+        "name": "Mamak",
+        "provinceId": 6
+      },
+      {
+        "id": 620,
+        "name": "Nallıhan",
+        "provinceId": 6
+      },
+      {
+        "id": 621,
+        "name": "Polatlı",
+        "provinceId": 6
+      },
+      {
+        "id": 622,
+        "name": "Pursaklar",
+        "provinceId": 6
+      },
+      {
+        "id": 623,
+        "name": "Sincan",
+        "provinceId": 6
+      },
+      {
+        "id": 624,
+        "name": "Şereflikoçhisar",
+        "provinceId": 6
+      },
+      {
+        "id": 625,
+        "name": "Yenimahalle",
+        "provinceId": 6
+      }
+    ],
+    "35": [
+      {
+        "id": 3501,
+        "name": "Aliağa",
+        "provinceId": 35
+      },
+      {
+        "id": 3502,
+        "name": "Balçova",
+        "provinceId": 35
+      },
+      {
+        "id": 3503,
+        "name": "Bayındır",
+        "provinceId": 35
+      },
+      {
+        "id": 3504,
+        "name": "Bayraklı",
+        "provinceId": 35
+      },
+      {
+        "id": 3505,
+        "name": "Bergama",
+        "provinceId": 35
+      },
+      {
+        "id": 3506,
+        "name": "Beydağ",
+        "provinceId": 35
+      },
+      {
+        "id": 3507,
+        "name": "Bornova",
+        "provinceId": 35
+      },
+      {
+        "id": 3508,
+        "name": "Buca",
+        "provinceId": 35
+      },
+      {
+        "id": 3509,
+        "name": "Çeşme",
+        "provinceId": 35
+      },
+      {
+        "id": 3510,
+        "name": "Çiğli",
+        "provinceId": 35
+      },
+      {
+        "id": 3511,
+        "name": "Dikili",
+        "provinceId": 35
+      },
+      {
+        "id": 3512,
+        "name": "Foça",
+        "provinceId": 35
+      },
+      {
+        "id": 3513,
+        "name": "Gaziemir",
+        "provinceId": 35
+      },
+      {
+        "id": 3514,
+        "name": "Güzelbahçe",
+        "provinceId": 35
+      },
+      {
+        "id": 3515,
+        "name": "Karabağlar",
+        "provinceId": 35
+      },
+      {
+        "id": 3516,
+        "name": "Karaburun",
+        "provinceId": 35
+      },
+      {
+        "id": 3517,
+        "name": "Karşıyaka",
+        "provinceId": 35
+      },
+      {
+        "id": 3518,
+        "name": "Kemalpaşa",
+        "provinceId": 35
+      },
+      {
+        "id": 3519,
+        "name": "Kınık",
+        "provinceId": 35
+      },
+      {
+        "id": 3520,
+        "name": "Kiraz",
+        "provinceId": 35
+      },
+      {
+        "id": 3521,
+        "name": "Konak",
+        "provinceId": 35
+      },
+      {
+        "id": 3522,
+        "name": "Menderes",
+        "provinceId": 35
+      },
+      {
+        "id": 3523,
+        "name": "Menemen",
+        "provinceId": 35
+      },
+      {
+        "id": 3524,
+        "name": "Narlıdere",
+        "provinceId": 35
+      },
+      {
+        "id": 3525,
+        "name": "Ödemiş",
+        "provinceId": 35
+      },
+      {
+        "id": 3526,
+        "name": "Seferihisar",
+        "provinceId": 35
+      },
+      {
+        "id": 3527,
+        "name": "Selçuk",
+        "provinceId": 35
+      },
+      {
+        "id": 3528,
+        "name": "Tire",
+        "provinceId": 35
+      },
+      {
+        "id": 3529,
+        "name": "Torbalı",
+        "provinceId": 35
+      },
+      {
+        "id": 3530,
+        "name": "Urla",
+        "provinceId": 35
+      }
+    ]
+  },
+  "updatedAt": "2026-04-21T14:30:53Z"
+}

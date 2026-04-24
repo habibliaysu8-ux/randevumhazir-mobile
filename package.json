@@ -1,0 +1,15 @@
+{
+  "name": "randevumhazir",
+  "version": "1.0.0",
+  "description": "randevumhazır - güzellik merkezleri ve müşteriler için randevu sistemi",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.16",
+    "pg": "^8.12.0"
+  }
+}

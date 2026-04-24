@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>randevumhazır</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="customer-body fresha-inspired-body">
+  <div class="app-shell">
+    <section class="hero-shell fresha-hero-shell">
+      <header class="hero-topbar container fresha-topbar">
+        <a href="/customer" class="brand-text brand-wordmark" aria-label="randevumhazır ana sayfa">randevumhazır</a>
+        <nav class="hero-nav fresha-nav">
+          <button id="openAuthBtn" class="nav-link plain-btn text-link">Giriş</button>
+          <a href="/partner" target="_blank" rel="noreferrer" class="nav-pill">Şirket profili oluştur</a>
+          <a href="/admin" target="_blank" rel="noreferrer" class="nav-pill nav-pill-menu">Menü</a>
+        </nav>
+      </header>
+
+      <main class="container hero-main centered-hero fresha-home-main">
+        <div class="hero-copy fresha-copy home-centered">
+          <div class="eyebrow hero-eyebrow">Sadece İstanbul · tüm ilçeler</div>
+          <h1>Güzellik randevunu anında ayarla</h1>
+          <p>
+            İstanbul’daki salon, spa ve güzellik uzmanlarını keşfet. İstersen direkt bugün için saat seç,
+            örneğin <strong>12:00’de tırnak</strong>, ve sadece uygun salonları gör.
+          </p>
+
+          <div class="hero-search-card fresha-search-card clean-search-card">
+            <div class="hero-search-grid fresha-search-grid fresha-grid-v2">
+              <div class="hero-input-wrap icon-search">
+                <label for="searchInput">Tüm hizmetler</label>
+                <input id="searchInput" type="text" placeholder="tırnak, manikür, saç, cilt bakımı" />
+              </div>
+              <div class="hero-input-wrap icon-pin has-divider">
+                <label for="districtSelect">İstanbul ilçeleri</label>
+                <select id="districtSelect"></select>
+              </div>
+              <div class="hero-input-wrap icon-date has-divider">
+                <label for="dateInput">Tarih</label>
+                <input id="dateInput" type="date" />
+              </div>
+              <div class="hero-input-wrap icon-time has-divider">
+                <label for="timeSelect">Saat</label>
+                <select id="timeSelect"></select>
+              </div>
+              <button id="searchBtn" class="hero-search-btn">Ara</button>
+            </div>
+          </div>
+
+          <div class="hero-statline hero-statline-centered">
+            <div class="count-line"><strong id="todayBookingCount">0</strong> uygun saat şu an rezervasyona açık</div>
+            <div class="hero-chip-row centered-chip-row">
+              <button class="ghost-chip" data-time-chip="10:00">Bugün 10:00</button>
+              <button class="ghost-chip" data-time-chip="12:00">Bugün 12:00</button>
+              <button class="ghost-chip" data-time-chip="15:00">Bugün 15:00</button>
+              <button class="ghost-chip" data-time-chip="18:00">Bugün 18:00</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <section class="results-shell fresha-results-shell">
+      <div class="container stack-32">
+        <div class="district-cloud-sheet">
+          <div class="section-header district-cloud-header">
+            <div>
+              <div class="eyebrow">İstanbul ilçeleri</div>
+              <h2>İlçeye göre hızlı geçiş</h2>
+              <p class="section-subtext">Sadece İstanbul gösterilir. Bir ilçeye dokununca arama ona göre filtrelenir.</p>
+            </div>
+          </div>
+          <div id="districtChipList" class="district-chip-list"></div>
+        </div>
+
+        <div class="section-header two-col-header">
+          <div>
+            <div class="eyebrow">Hızlı filtreler</div>
+            <h2>Belirli saat için salon bul</h2>
+            <p id="activeSearchSummary" class="section-subtext">Bugün için açık saatler gösteriliyor.</p>
+          </div>
+          <div class="filter-chip-row">
+            <button class="filter-chip" data-category-chip="Protez Tırnak">Protez Tırnak</button>
+            <button class="filter-chip" data-category-chip="Manikür">Manikür</button>
+            <button class="filter-chip" data-category-chip="Cilt Bakımı">Cilt Bakımı</button>
+            <button class="filter-chip" data-category-chip="Saç">Saç</button>
+            <button class="filter-chip" data-category-chip="Lazer">Lazer</button>
+          </div>
+        </div>
+
+        <div class="dashboard-banner customer-dashboard-strip fresha-account-strip">
+          <div>
+            <div class="eyebrow">Müşteri paneli</div>
+            <h3>Yaklaşan randevuların</h3>
+            <p id="customerPanelHint">Giriş yaptıktan sonra oluşturduğun randevular burada görünür.</p>
+          </div>
+          <div id="customerQuickContent" class="dashboard-banner-content"></div>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">Arama sonuçları</div>
+            <h2>Seçtiğin saat için uygun salonlar</h2>
+          </div>
+        </div>
+        <div id="resultsList" class="salon-results-grid fresha-list-grid"></div>
+
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">Öne çıkanlar</div>
+            <h2>İstanbul’da öne çıkan salonlar</h2>
+          </div>
+        </div>
+        <div id="featuredList" class="featured-grid"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal" id="authModal">
+    <div class="modal-card small">
+      <div class="modal-header">
+        <div>
+          <div class="eyebrow">Müşteri hesabı</div>
+          <h3 class="modal-title">Giriş yap veya kayıt ol</h3>
+        </div>
+        <button class="modal-close" data-close="authModal">✕</button>
+      </div>
+      <div class="modal-body columns-2 compact-gap">
+        <div class="sheet-card">
+          <h4>Giriş</h4>
+          <div class="form-stack">
+            <div class="field"><label>E-posta</label><input id="loginEmail" type="email" placeholder="customer@randevumhazir.com" /></div>
+            <div class="field"><label>Şifre</label><input id="loginPassword" type="password" placeholder="••••••••" /></div>
+            <button id="loginBtn" class="button dark full">Giriş yap</button>
+          </div>
+        </div>
+        <div class="sheet-card">
+          <h4>Kayıt</h4>
+          <div class="form-stack">
+            <div class="field"><label>Ad Soyad</label><input id="registerName" type="text" placeholder="Ad Soyad" /></div>
+            <div class="field"><label>Telefon</label><input id="registerPhone" type="tel" placeholder="05xx xxx xx xx" /></div>
+            <div class="field"><label>E-posta</label><input id="registerEmail" type="email" placeholder="ornek@mail.com" /></div>
+            <div class="field"><label>Şifre</label><input id="registerPassword" type="password" placeholder="En az 6 karakter" /></div>
+            <button id="registerBtn" class="button dark full">Kayıt ol</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="salonModal">
+    <div class="modal-card wide">
+      <div class="modal-header">
+        <div>
+          <div class="eyebrow">Salon detay</div>
+          <h3 class="modal-title" id="salonModalTitle">Salon</h3>
+          <p class="muted" id="salonModalSubtitle"></p>
+        </div>
+        <button class="modal-close" data-close="salonModal">✕</button>
+      </div>
+      <div class="modal-body" id="salonModalBody"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="bookingModal">
+    <div class="modal-card small">
+      <div class="modal-header">
+        <div>
+          <div class="eyebrow">Randevu onayı</div>
+          <h3 class="modal-title">Seçtiğin saati onayla</h3>
+          <p class="muted" id="bookingSummaryText"></p>
+        </div>
+        <button class="modal-close" data-close="bookingModal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="field">
+          <label for="bookingNotes">Ek not</label>
+          <textarea id="bookingNotes" placeholder="İstersen kısa not ekleyebilirsin."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="button soft" data-close="bookingModal">Vazgeç</button>
+        <button id="confirmBookingBtn" class="button dark">Randevuyu oluştur</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/shared.js"></script>
+  <script src="/customer.js"></script>
+</body>
+</html>

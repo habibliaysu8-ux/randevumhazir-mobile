@@ -1,0 +1,55 @@
+RANDEVUMHAZIR - GERÇEK KULLANIM 5 ADIM
+
+Bu sürümde yapılanlar:
+1) Kalıcı database için PostgreSQL/Supabase desteği eklendi.
+   - Render/Supabase DATABASE_URL girilirse kayıtlar artık data/db.json yerine database içinde saklanır.
+   - DATABASE_URL boşsa eski local data/db.json ile çalışır.
+
+2) Giriş/kayıt güvenliği güçlendirildi.
+   - Yeni kayıt olan kullanıcıların şifreleri hash olarak saklanır.
+   - Eski düz şifreli hesaplar giriş yaptığında otomatik hash'e yükseltilir.
+
+3) Gerçek şifremi unuttum akışı eklendi.
+   - /api/auth/forgot-password e-posta için güvenli token üretir.
+   - /reset-password.html?token=... sayfası yeni şifre belirletir.
+   - /api/auth/reset-password tokeni kontrol edip şifreyi değiştirir.
+
+4) Mail sistemi gerçek SMTP ile çalışacak hale getirildi.
+   - MAIL_HOST, MAIL_PORT, MAIL_USER, MAIL_PASS, MAIL_FROM girilirse mail gider.
+   - Mail ayarı boşsa sistem bozulmaz, loga yazar.
+
+5) Partner panel - müşteri app randevu akışı aynı backend'de çalışır.
+   - Partner: /partner.html
+   - Müşteri mobile app: /app/
+   - Partner saat açar, müşteri app'ten randevu alır, partner onay/red yapar, mail ayarı varsa bildirim gider.
+
+RENDER ENVIRONMENT VARIABLES:
+PUBLIC_BASE_URL=https://randevumhazir-mobile.onrender.com
+DATABASE_URL=Supabase veya Render PostgreSQL connection string
+DATABASE_SSL=true
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_SECURE=false
+MAIL_USER=mail adresin
+MAIL_PASS=app password veya SMTP password
+MAIL_FROM=Randevumhazır <mail adresin>
+ADMIN_EMAIL=admin@randevumhazir.com
+ADMIN_PASSWORD=güçlü-admin-şifren
+ADMIN_NAME=Randevumhazır Admin
+
+GitHub'a yükleme komutu:
+cd ~/Desktop/RANDEVUMHAZIR-GERCEK-KULLANIM-5-ADIM
+git init
+git add .
+git commit -m "gercek kullanim 5 adim"
+git branch -M main
+git remote add origin https://github.com/habibliaysu8-ux/randevumhazir-mobile.git
+git push -f origin main
+
+Sonra Render:
+randevumhazir-mobile > Manual Deploy > Deploy latest commit
+
+Açılacak linkler:
+Müşteri app: https://randevumhazir-mobile.onrender.com/app/?v=gercek5
+Partner panel: https://randevumhazir-mobile.onrender.com/partner.html
+Şifre yenileme sayfası: https://randevumhazir-mobile.onrender.com/reset-password.html?token=MAILDEKI_TOKEN

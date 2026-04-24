@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>randevumhazır · partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="panel-body">
+  <div class="app-shell">
+    <header class="panel-topbar container">
+      <a href="/" class="brand-wordmark-v4 brand-wordmark-elegant">randevumhazır</a>
+      <nav class="hero-nav partner-top-actions">
+        <button id="partnerLogoutBtn" class="nav-pill plain-btn">Çıkış</button>
+      </nav>
+    </header>
+
+    <main class="container stack-24 panel-main">
+      <section id="partnerAuthSection" class="partner-auth-shell">
+        <div class="dashboard-banner partner-hero-card">
+          <div>
+            <div class="eyebrow">Partner alanı</div>
+            <h1>Salonunu aç, hizmetlerini ekle ve randevularını tek yerden yönet.</h1>
+            <p>
+              Giriş yaptıktan sonra mağaza profilini oluşturabilir, uzman ekleyebilir,
+              açık saatlerini yayınlayabilir ve müşteri paneline gerçek verilerini yansıtabilirsin.
+            </p>
+            <div class="billing-inline-note">İlk 2 gün ücretsiz. Sonrasında günlük 200 TL veya haftalık 142 TL paketle devam edersin.</div>
+          </div>
+        </div>
+
+        <div class="columns-2 partner-auth-grid">
+          <section class="sheet-card">
+            <h3>Partner girişi</h3>
+            <p class="muted auth-copy">Mevcut işletme hesabınla giriş yap.</p>
+            <div class="form-stack">
+              <div class="field"><label>E-posta</label><input id="partnerLoginEmail" name="partner_login_email" type="email" placeholder="ornek@mail.com" autocomplete="off" /></div>
+              <div class="field"><label>Şifre</label><input id="partnerLoginPassword" name="partner_login_password" type="password" placeholder="••••••••" autocomplete="new-password" /></div>
+              <button id="partnerLoginBtn" class="button dark full">Giriş yap</button>
+            </div>
+          </section>
+
+          <section class="sheet-card">
+            <h3>Yeni partner hesabı</h3>
+            <p class="muted auth-copy">Önce hesabını oluştur, sonra mağazanı aç.</p>
+            <div class="form-stack">
+              <div class="field"><label>Yetkili adı</label><input id="partnerRegisterName" type="text" placeholder="Ad Soyad" autocomplete="off" /></div>
+              <div class="field"><label>Telefon</label><input id="partnerRegisterPhone" type="tel" placeholder="05xx xxx xx xx" autocomplete="off" /></div>
+              <div class="field"><label>E-posta</label><input id="partnerRegisterEmail" type="email" placeholder="ornek@mail.com" autocomplete="off" /></div>
+              <div class="field"><label>Şifre</label><input id="partnerRegisterPassword" type="password" placeholder="En az 6 karakter" autocomplete="new-password" /></div>
+              <button id="partnerRegisterBtn" class="button soft full">Partner hesabı oluştur</button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="partnerWorkspaceSection" class="stack-24" hidden>
+        <section class="dashboard-banner partner-hero-card">
+          <div>
+            <div class="eyebrow">Partner paneli</div>
+            <h1>İşletmeni yönet, açık saatlerini yayınla ve rezervasyonlarını takip et.</h1>
+            <p id="partnerSummaryText">Giriş yaptıktan sonra mağaza profilin ve hizmetlerin burada görünür.</p>
+          </div>
+        </section>
+
+
+        <section class="sheet-card">
+          <div class="section-header"><h2>Paket ve ödeme</h2></div>
+          <div id="partnerBillingPanel"></div>
+        </section>
+
+        <div id="partnerMetrics" class="metrics-grid">
+          <div class="metric-card"><span class="muted">Salon</span><strong>0</strong></div>
+          <div class="metric-card"><span class="muted">Hizmet</span><strong>0</strong></div>
+          <div class="metric-card"><span class="muted">Açık saat</span><strong>0</strong></div>
+          <div class="metric-card"><span class="muted">Rezervasyon</span><strong>0</strong></div>
+        </div>
+
+        <div class="partner-workspace-grid">
+          <section class="sheet-card">
+            <div class="section-header"><h2>Salon profili ayarları</h2></div>
+            <div class="form-grid-2">
+              <div class="field"><label>Salon adı</label><input id="salonName" type="text" placeholder="Atelier Blush Nişantaşı" /></div>
+              <div class="field"><label>Ana kategori</label><input id="salonCategory" type="text" placeholder="Protez Tırnak" /></div>
+              <div class="field"><label>Şehir</label><select id="salonProvince"></select></div>
+              <div class="field"><label>İlçe</label><select id="salonDistrict"></select></div>
+              <div class="field field-span-2"><label>Adres</label><input id="salonAddress" type="text" placeholder="Cadde, sokak, bina no" /></div>
+              <div class="field field-span-2"><label>Kapak görseli URL</label><input id="salonCoverImage" type="url" placeholder="https://..." /></div>
+              <div class="field field-span-2"><label>Açıklama</label><textarea id="salonDescription" placeholder="Salonunun kısa tanımı"></textarea></div>
+            </div>
+            <div class="section-actions"><button id="saveSalonBtn" class="button dark">Salon profilini kaydet</button></div>
+          </section>
+
+          <section class="sheet-card">
+            <div class="section-header"><h2>Hizmet, uzman ve saat ekle</h2></div>
+            <div class="triple-grid">
+              <div class="sub-sheet">
+                <h4>Hizmet ekle</h4>
+                <div class="form-stack">
+                  <div class="field"><label>Hizmet adı</label><input id="serviceName" type="text" placeholder="Jel Protez Tırnak" /></div>
+                  <div class="field"><label>Kategori</label><input id="serviceCategory" type="text" placeholder="Protez Tırnak" /></div>
+                  <div class="field"><label>Süre (dk)</label><input id="serviceDuration" type="number" placeholder="60" min="5" step="5" /></div>
+                  <div class="field"><label>Fiyat</label><input id="servicePrice" type="number" placeholder="1200" min="1" step="50" /></div>
+                  <button id="addServiceBtn" class="button soft full">Hizmet ekle</button>
+                </div>
+              </div>
+              <div class="sub-sheet">
+                <h4>Uzman ekle</h4>
+                <div class="form-stack">
+                  <div class="field"><label>Uzman adı</label><input id="staffName" type="text" placeholder="Elif Yılmaz" /></div>
+                  <div class="field"><label>Ünvan</label><input id="staffTitle" type="text" placeholder="Nail Artist" /></div>
+                  <button id="addStaffBtn" class="button soft full">Uzman ekle</button>
+                </div>
+              </div>
+              <div class="sub-sheet">
+                <h4>Saat aç</h4>
+                <div class="form-stack">
+                  <div class="field"><label>Hizmet</label><select id="slotService"></select></div>
+                  <div class="field"><label>Uzman</label><select id="slotStaff"></select></div>
+                  <div class="field"><label>Tarih</label><input id="slotDate" type="date" /></div>
+                  <div class="field"><label>Saat</label><select id="slotTime"></select></div>
+                  <button id="addSlotBtn" class="button dark full">Saati yayınla</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="sheet-card">
+          <div class="section-header"><h2>İçerik özeti</h2></div>
+          <div id="partnerListsSummary"></div>
+        </section>
+
+        <section class="sheet-card">
+          <div class="section-header partner-section-header">
+            <div>
+              <h2>Açık saatler</h2>
+              <p class="muted">Uzun listeyi ayrı pencerede açabilirsin.</p>
+            </div>
+            <button id="openSlotsModalBtn" class="button soft">Açık saatleri görüntüle</button>
+          </div>
+          <div id="partnerSlotPreview" class="slot-preview-grid"></div>
+        </section>
+
+        <section class="sheet-card">
+          <div class="section-header"><h2>Gelen rezervasyonlar</h2></div>
+          <div id="partnerBookingsTable" class="table-wrap"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="slotsModal">
+    <div class="modal-card wide">
+      <div class="modal-header">
+        <div>
+          <div class="eyebrow">Açık saatler</div>
+          <h3 class="modal-title">Yayınlanan tüm saatler</h3>
+          <p class="muted">Buradaki saatler müşteri panelinde rezervasyona açılır.</p>
+        </div>
+        <button class="modal-close" data-close="slotsModal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="partnerSlotsTable" class="table-wrap"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/shared.js"></script>
+  <script src="/partner.js"></script>
+</body>
+</html>
